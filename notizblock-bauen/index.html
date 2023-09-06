@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizblock</title>
+
+    <!-- Scripts und Stylesheets -->
+
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body onload="initArrays()">
+    <div id="content" class="content">
+        <!-- Header section -->
+        <header>
+            <img onclick="showMenuMobile()" class="d-none-min450" src="./img/menu-bars.svg" alt="Menu Schaltfläche">
+            <button onclick="newNote()" class="d-none450" id="neue-notiz-button"><a href="#">Neue Notiz</a></button>
+            <!-- <button class="d-none450" id="notiz-loeschen-button"><a href="#">Notiz löschen</a></button> -->
+            <button onclick="addNote()" class="d-none450" id="notiz-hinzufuegen-button"><a href="#">Notiz speichern</a></button>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu-div" class="mobile-menu-div">
+                <button onclick="newNote()" id="neue-notiz-button"><a href="#">Neue Notiz</a></button>
+                <!-- <button class="d-none450" id="notiz-loeschen-button"><a href="#">Notiz löschen</a></button> -->
+                <button onclick="addNote()" id="notiz-hinzufuegen-button"><a href="#">Notiz speichern</a></button>
+        </div>
+
+        <!-- Menu section -->
+        <section class="menu-section">
+            <div class="menu-title-div">
+                <h1>MENU</h1>
+            </div>
+            <nav class="menu-selection">
+                <button onclick="currentNote()" class="selected-rubrik" id="aktuelle-notiz-button"><a href="#">Aktuelle Notiz</a></button>
+                <button onclick="showBoard(), loadNotes()" id="notizboard-button"><a href="#">Notizboard</a></button>
+                <button onclick="showDeletedNotesBoard()" id="geloeschte-notiz-button"><a href="#">Gelöschte Notizen</a></button>
+            </nav>
+        </section>
+
+        <!-- Notiz section -->
+        <section class="notes-section">
+            <div class="notes-section-title-div">
+                <input id="note-title" class="notes-title-input" placeholder="Notiz- Titel" type="text">
+            </div>
+            <div class="note-content">
+                    <textarea id="note-content" class="notes-content-input" type="text"></textarea>
+            </div>
+        </section>
+
+        <!-- Notizboard section -->
+        <section id="note-board" class="board-section z-index1">
+        </section>
+
+        <!-- Gelöschte Notiz section -->
+        <section id="deleted-notes-board" class="board-section z-index2">
+        </section>
+    </div>
+</body>
+
+</html>
